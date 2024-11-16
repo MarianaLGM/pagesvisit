@@ -1,0 +1,47 @@
+body{
+    background-color: hsl(240, 67%, 4%);
+}
+
+
+/*frase debajo video, contador*/
+#contadorVisitas,p{
+    color: whitesmoke;
+    font-family: monospace;
+    font-size: 18px;
+}
+
+
+/*contador*/
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+
+}
+
+/*contenedor video*/
+.contentVideo{
+    margin-top: 50px;
+    border-style:groove;
+    border-color: #27d8ef;
+    border-width: 5px;
+    width: 800px;
+    height: 460px;
+    margin-left: 320px;
+}   
+
+/*video*/
+video{
+    width: 800px;
+}
+
+/*logo reset*/
+#btnReestablecer{
+    width: 120px;
+    height: 110px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
