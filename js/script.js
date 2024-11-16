@@ -1,34 +1,24 @@
 
+const numeroVisitas = localStorage.getItem("visitas"); //creo clave en local Storage
+let contador;
 
+	if(!numeroVisitas){ //not lógico
+		contador = 0; //si contador es cero
+		localStorage.setItem("visitas", contador);//accedo clave en local Storage
+	} else {
+		contador = localStorage.getItem("visitas"); //si contador es visitas
+		contador++; //que las sume
+		localStorage.setItem("visitas", contador);//acumulado de contador +visita  
+	}
+  
+  document.getElementById("contadorVisitas").innerHTML=contador;//contador visitas html
 
-//tudominio.com?variable1=valordevariable1&variable2 =valordevariable2
-
-//<a href="pagina2.php?variable1=hola&variable2=como&va riable3=estas">
-
-//http://127.0.0.1:5501/pagesvisit/?variable1=hola&variable2=como&variable3=estas">
-
-//btnReestablecer (para hacer click y reiniciar contador)
-let contador=0;
-
-const contadorVisitas=docuement.getElementById("contadorVisitas");//contador visitas
-const clickReestablecer=document.getElementById("btnReestablecer");//boton
-
-clickReestablecer.addEventListener('click', function () {
-    //reinicio contador a 0
-    contador=0;
-    valor.innerHTML=contador;
-  });
   console.log (contador)
   
 
-  /*
-botonRestablecer.addEventListener('click', function () {
-    //incremento contador
-    contador ++;
-    //muestro valor
-    valor.innerHTML=contador
-    //reinicio contador a 0
-    contador=0;
-    valor.innerHTML=contador;
-  });*/
-  
+  const clickReset=document.getElementById("btnReestablecer");//boton para hacer click y resetear contador
+
+  clickReset.addEventListener('click', function () {//resetar al hacer click
+  localStorage.removeItem("visitas");//eliminar clave cuando toque pinche en RESET
+	location.reload();//recarga la URL actual, como el botón Actualizar.
+})
